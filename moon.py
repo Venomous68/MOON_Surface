@@ -1,6 +1,10 @@
 # ==========================================
-# STEP 1: ENVIRONMENT SETUP & DOWNLOAD
-# ==========================================
+# Install the necessary library for reading GeoTIFF files
+!pip install -q rasterio plotly
+
+# Download the USGS LOLA Global DEM (This is about ~1GB, so it may take a minute)
+# We use -nc (no clobber) so it doesn't re-download if you run the cell twice
+!wget -nc "https://planetarymaps.usgs.gov/mosaic/Lunar_LRO_LOLA_Global_LDEM_118m_Mar2014.tif" -O moon_dem.tif
 import rasterio
 import numpy as np
 import plotly.graph_objects as go
@@ -18,7 +22,7 @@ with rasterio.open('moon_dem.tif') as dataset:
 
 # FIX 2: Handle "NoData" pixels (USGS often uses -32768 for missing data)
 # The moon's actual elevation is roughly between -9000m and +10700m. 
-# We will set anything crazy to "NaN" so it doesn't ruin our math.
+# We will set anything crazy to "NaN" (Not a Number) so it doesn't ruin our math.
 elevation_data[elevation_data < -20000] = np.nan 
 
 # Safely calculate the min and max, ignoring those NaNs
