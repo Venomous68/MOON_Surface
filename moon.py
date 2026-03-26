@@ -18,7 +18,7 @@ with rasterio.open('moon_dem.tif') as dataset:
 
 # FIX 2: Handle "NoData" pixels (USGS often uses -32768 for missing data)
 # The moon's actual elevation is roughly between -9000m and +10700m. 
-# We will set anything crazy to "NaN" (Not a Number) so it doesn't ruin our math.
+# We will set anything crazy to "NaN" so it doesn't ruin our math.
 elevation_data[elevation_data < -20000] = np.nan 
 
 # Safely calculate the min and max, ignoring those NaNs
