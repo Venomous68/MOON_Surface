@@ -10,7 +10,8 @@ An interactive 3D map of the Moon's surface built from NASA's LRO LOLA elevation
 ![Moon Globe]
 <img width="1233" height="689" alt="image" src="https://github.com/user-attachments/assets/54c0db0d-229e-49b8-9733-1dac215c9a9a" />
 
-<img width="698" height="660" alt="image" src="https://github.com/user-attachments/assets/7fdafdac-a26e-412b-a4f2-788e9bc0aa10" />
+<img width="694" height="668" alt="image" src="https://github.com/user-attachments/assets/a2076f28-8216-439f-b719-0e658ba8b723" />
+
 
 
 ## What it does
